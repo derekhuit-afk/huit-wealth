@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #C9A84C;
+  --navy: #0A0E1A;
+}
+
+body {
+  background-color: #0A0E1A;
+  color: #E5E7EB;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.gold-text {
+  color: #C9A84C;
+}
+
+.gold-border {
+  border-color: #C9A84C;
+}
+
+.card-glass {
+  background: rgba(20, 28, 46, 0.8);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  backdrop-filter: blur(12px);
+}
+
+.agent-glow {
+  box-shadow: 0 0 20px rgba(201, 168, 76, 0.15);
+}
+
+.progress-bar {
+  transition: width 0.8s ease-in-out;
+}
+
+.step-active {
+  border-color: #C9A84C;
+  color: #C9A84C;
+}
+
+.step-complete {
+  background: #C9A84C;
+  border-color: #C9A84C;
+  color: #0A0E1A;
+}
+
+.step-inactive {
+  border-color: #374151;
+  color: #6B7280;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(201,168,76,0.1) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.typing-indicator span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #C9A84C;
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+.typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+.typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1); }
+}
